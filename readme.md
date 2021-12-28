@@ -12,9 +12,10 @@ First thing you need to do is to find your bucket URL, this is easy to do in the
 
 ## usage
 
-You'll need to be logged in with [gsutils](https://cloud.google.com/storage/docs/gsutil) to run this script.
+You'll need to be logged in with [gcloud](https://cloud.google.com/sdk/gcloud/reference/auth) to run this script.
 
 ```
+gcloud auth login
 pipenv install
 pipenv run python download.py gs://pubsite_prod_rev_**************/reviews/
 ```
