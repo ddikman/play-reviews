@@ -49,5 +49,11 @@ def list_files(bucket_name):
 
   print('Reviews merged into output file: ' + output_file)
 
-bucket = sys.argv[1].removeprefix("gs://").removesuffix("/").removesuffix("/reviews")
-list_files(bucket)
+if __name__ == '__main__':
+  if len(sys.argv) != 2:
+    print("Usage: python3 download.py <bucket_name>")
+    exit(1)
+
+  bucket_url = sys.argv[1]
+  bucket_name = bucket_url.removeprefix("gs://").removesuffix("/").removesuffix("/reviews")
+  list_files(bucket_name)
